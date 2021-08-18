@@ -1,0 +1,30 @@
+opcion=99
+while [ $opcion -ne 0 ]
+do
+	sleep 1
+	clear
+	
+	echo "1)Manejo de Usuarios"
+	echo "2)Manejo de Grupos"
+	echo "3)Listados"
+	echo "4)Respaldo de Archivos"
+	echo "5)Programar Respaldo"
+	echo "0)Salir"
+
+	read -p "Ingrese una opcion " opcion
+	
+		case $opcion in
+		1)bash menu.usuarios
+		;;
+		2)bash menu.grupos
+		;;
+		3)bash listar
+		;;
+		4)bash respaldo
+		;;
+		5)bash programacion
+		;;
+		0)echo "saliendo..."
+		;;
+	esac
+done

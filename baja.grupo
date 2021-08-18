@@ -1,0 +1,5 @@
+clear
+read -p "Ingrese el nombre del usuario que desea eliminar" nombre
+sudo deluser $nombre
+echo "Se elimino correctamente el usuario" $nombre
+sleep 2

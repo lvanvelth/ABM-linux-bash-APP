@@ -1,0 +1,21 @@
+sleep 1
+clear
+echo "1) Cambiar Nombre"
+echo "2) Cambiar password"
+echo "0) Volver:"
+
+read -p "Ingrese una accion " opcion
+case $opcion in
+	1)
+	clear
+	read -p "Ingrese el nombre del grupo que desea modificar:" name
+	read -p "Ingrese nuevo nombre:" modif
+	sudo groupmod -n $modif $name
+	;;
+	2)
+	clear
+	read -p "Ingrese el nombre del grupo que desa cambiar la password:" passname
+	sudo gpasswd $passname
+	;;
+	0)
+esac

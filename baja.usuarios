@@ -1,0 +1,2 @@
+read -p "Ingrese el nombre del usuario a eliminar" nombre
+userdel -r $nombre

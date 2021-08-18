@@ -1,0 +1,23 @@
+opcion=99
+while [ $opcion -ne 0 ]
+do
+	sleep 1
+	clear
+ 	echo "1) Alta de Usuarios"
+	echo "2) Baja de Usuarios"
+	echo "3) Modificcion de Usuarios"
+	echo "0) Volver"
+	
+	read -p "Ingrese una accion " opcion
+	case $opcion in
+		1)bash alta.usuarios
+		;;
+		2)bash baja.usuarios
+		;;
+		3)bash modificacion.usuarios
+		;;
+		0)bash menu.proyecto
+		;;
+
+	esac
+done

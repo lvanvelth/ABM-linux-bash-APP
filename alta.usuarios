@@ -1,0 +1,5 @@
+clear
+read -p "Ingrese el nombre de Usuario " nombre
+sudo -i adduser $nombre
+echo "Se creo correctamente el usuario"
+sleep 2

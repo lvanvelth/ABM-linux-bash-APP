@@ -1,0 +1,5 @@
+#DESCOMPRIMIR
+sudo tar -xvzf /home/respaldos/respaldo.tfz -C /home/respaldos/
+
+#VER LO QUE HAY DENTRO DEL .tfz
+sudo tar -ztvf respaldo.tfz

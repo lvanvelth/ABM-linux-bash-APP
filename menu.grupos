@@ -1,0 +1,23 @@
+opcion=99
+while [ $opcion -ne 0 ]
+do
+	sleep 1
+	clear
+	echo "1) Alta de Grupos"
+	echo "2) Baja de Grupos"
+	echo "3) Modificacion de Grupos"
+	echo "0) Volver"
+	
+	read -p "Ingrese una accion " opcion
+	
+	case $opcion in
+		1)bash alta.grupo
+		;;
+		2)bash baja.grupos
+		;;
+		3)bash modificacion.grupos
+		;;
+		0)bash menu.proyecto
+		;;
+	esac
+done

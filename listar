@@ -1,0 +1,33 @@
+clear
+echo "1) Los 10 ultimos usuarios creados"
+echo "2) Usuarios con permiso para ejecutar el comando sudo"
+echo "3) Usuarios entre un rango de UID"
+echo "0) Volver"
+
+read -p "Ingrese la opcion de listado que desee " opcion
+
+case $opcion in
+
+	1)
+	clear
+	cat /etc/passwd | awk -F: '{print $3,$1}' | sort -n | tail -n 10
+	read -p "Presione una tecla para continuar.." tecla
+	;;
+	2)
+	clear
+	echo "Los usuarios son:"
+	echo "$(sudo grep -w "ALL=(ALL)" /etc/sudoers)" > busqueda.temp
+	echo "$(sudo grep -v %wheel busqueda.temp)" > resultado.temp
+	cat resultado.temp
+	read -p "Presione una tecla para continuar.." tecla
+	;;
+	3)
+	clear
+	read -p "Ingrese el numero mas bajo" a
+	read -p "Ingrese el numero mas alto" b
+	echo "Los usuarios entre " $a " y " $b " son los siguientes:"
+	awk -F: '$3> '$a' && $3< '$b' {print $3,$1}' /etc/passwd
+	;;
+	0)sudo bash menu.proyecto
+	;;
+esac

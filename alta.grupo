@@ -1,0 +1,5 @@
+clear
+read -p "Ingrese el nombre del grupo que desea agregar" nombre
+sudo groupadd $nombre
+echo "Se agrego correctamente el grupo" $nombre
+sleep 2

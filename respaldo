@@ -1,0 +1,11 @@
+DIR="../respaldos"
+if [ ! -d "$DIR" ]; then
+	sudo mkdir ../respaldos
+	sudo cp borrar ../respaldos
+	sudo cp descomprimir ../respaldos 
+fi
+
+srcDIR="/app/"
+destDIR="../respaldos/"
+FILENAME=respaldo-$(date +%d-%m-%Y).tgz
+sudo tar --create --gzip --file=$destDIR$FILENAME $srcDIR

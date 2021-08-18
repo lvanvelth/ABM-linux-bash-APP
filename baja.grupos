@@ -1,0 +1,2 @@
+read -p "Ingrese el nombre del usuario que desea eliminar" nombre
+sudo groupdel $nombre
